@@ -9,10 +9,9 @@ set cpoptions&vim
 
 "remove trailing whitespace
 function! s:TrimWhiteSpaces()
-    let l = line('.')
-    let c = line('.')
+    let cursorPosition = getcurpos('.')
     execute ':%s/\s\+$//e'
-    call cursor(l, c)
+    call cursor(cursorPosition[1], cursorPosition[2])
 endfunction
 
 
